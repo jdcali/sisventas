@@ -1,0 +1,13 @@
+php artisan app:name sisVentas
+php artisan serve
+php artisan make:model Categoria
+php artisan make:controller CategoriaController
+php artisan make:controller CategoriaController --resource?
+php artisan make:request CategoriaFormRequest
+
+composer update
+
+$this->app->binf('patch.public', function(){
+	return base_patch().'/public_html';
+));
+}
