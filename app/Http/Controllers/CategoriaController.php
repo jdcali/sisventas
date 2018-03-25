@@ -6,7 +6,7 @@ use Illuminate\Http\Request;
 //use sisVentas\Http\Request;
 use sisVentas\Categoria;
 use Illuminate\Support\Facades\Redirect;
-use sisVentas\Http\Request\CategoriaFormRequest;
+use sisVentas\Http\Requests\CategoriaFormRequest;
 use DB;
 
 class CategoriaController extends Controller
