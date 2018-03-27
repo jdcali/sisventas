@@ -104,7 +104,7 @@
               </a>
               <ul class="treeview-menu">
                 <li><a href="compras/ingreso"><i class="fa fa-circle-o"></i> Ingresos</a></li>
-                <li><a href="compras/proveedor"><i class="fa fa-circle-o"></i> Proveedores</a></li>
+                <li><a href="proveedor"><i class="fa fa-circle-o"></i> Proveedores</a></li>
               </ul>
             </li>
             <li class="treeview">
