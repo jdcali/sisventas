@@ -40,12 +40,12 @@ class IngresoController extends Controller
         }
     public function create(){
 
-            $personas=DB::table('persona')->where('tipo_persona','=','Proveedor'->get());
+            $personas=DB::table('persona')->where('tipo_persona','=','Proveedor')->get();
             $articulos=DB::table('articulo as art')
                 ->select(DB::raw('CONCAT(art.codigo, "",art.nombre) AS articulo'),'art.idarticulo') 
                 ->where('art.estado','=','Activo')
                 ->get();
-            return view("compras.inteso.create",["personas"=>$personas,"articulos"=>$articulos]);  
+            return view("compras.ingreso.create",["personas"=>$personas,"articulos"=>$articulos]);  
     }
 
     public function store (IngresoFormRequest $request)
