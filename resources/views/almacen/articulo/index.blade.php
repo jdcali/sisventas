@@ -32,7 +32,7 @@
 						<td>{{$art->categoria}}</td>
 						<td>{{$art->stock}}</td>
 						<td>
-							<img src="{{asset('imagenes/articulos/'.$art->imagen)}}" alt="{{$art->nombre}}" height="100px" width="100px" class="img-thumbnail">
+							<img src="{{asset('imagenes/articulos/'.$art->imagen)}}" alt="{{$art->nombre}}" height="100px" width="100px" class="img-thumbnail img-rounded">
 						</td>
 						<td>{{$art->estado}}</td>	
 						<td>

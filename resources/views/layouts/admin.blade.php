@@ -22,7 +22,6 @@
   </head>
   <body class="hold-transition skin-blue sidebar-mini">
     <div class="wrapper">
-
       <header class="main-header">
 
         <!-- Logo -->
@@ -194,12 +193,13 @@
         <div class="pull-right hidden-xs">
           <b>Version</b> 2.3.0
         </div>
-        <strong>Copyright &copy; 2015-2018 <a href="www.incanatoit.com">JDCali</a>.</strong> All rights reserved.
+        <strong>Copyright &copy; 2015-2018 <a href="www.JTOOLS.com.pe">JDCali</a>.</strong> All rights reserved.
       </footer>
 
       
     <!-- jQuery 2.1.4 -->
     <script src="{{asset('js/jQuery-2.1.4.min.js')}}"></script>
+    @stack('scripts')
     <!-- Bootstrap 3.3.5 -->
     <script src="{{asset('js/bootstrap.min.js')}}"></script>
     <script src="{{asset('js/bootstrap-select.min.js')}}"></script>

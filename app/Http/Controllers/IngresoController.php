@@ -71,7 +71,7 @@ class IngresoController extends Controller
 
             $cont = 0;
 
-            while ( $cont <= count($idarticulo)) {
+            while ( $cont < count($idarticulo)) {
                 $detalle= new DetalleIngreso();
                 $detalle->idingreso=$ingreso->idingreso;
                 $detalle->idarticulo=$idarticulo[$cont];

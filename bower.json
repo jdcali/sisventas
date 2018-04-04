@@ -1,0 +1,21 @@
+{
+  "name": "sisVentas",
+  "description": "ventas",
+  "main": "",
+  "authors": [
+    "jdcali <nanielycalisaya@gmail.com>"
+  ],
+  "license": "MIT",
+  "homepage": "https://github.com/jdcali/sisventas",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "ekko-lightbox": "^5.3.0"
+  }
+}
