@@ -18,9 +18,9 @@ use Illuminate\Support\Collection;
 
 class IngresoController extends Controller
 {
-    public function __constructor()
+    public function __construct()
     {
-
+        $this->middleware('auth');
     }
     public function index(Request  $request)
     {
@@ -93,22 +93,22 @@ class IngresoController extends Controller
 
     public function show($id)
     {
-
         $ingreso=DB::table('ingreso as i')
-                ->join('persona asp','i.proveedor','=','p.idpersona')
-                ->join('detalle_ingreso as di','i.idingreso','='.'di.ingreso')
-                ->select('i.idingreso','i.fecha_hora','p.nombre','i.tipo_comprobante','i.serie_comprobante','i.num_comprobante','i.impuesto','i.estado',DB::raw('sum(di.cantidad*precio_compra)as total'))
-                ->where('i.idingreso','=',$id)
-                ->first();
+            ->join('persona as p','i.idproveedor','=','p.idpersona')
+            ->join('detalle_ingreso as di','i.idingreso','=','di.idingreso')
+            ->select('i.idingreso','i.fecha_hora','p.nombre','i.tipo_comprobante','i.serie_comprobante','i.num_comprobante','i.impuesto','i.estado',DB::raw('sum(di.cantidad*precio_compra) as total'))
+            ->where('i.idingreso','=',$id)
+            //->groupBy('i.idingreso', 'i.fecha_hora', 'p.nombre', 'i.tipo_comprobante', 'i.serie_comprobante', 'i.num_comprobante', 'i.impuesto', 'i.estado')
+            ->first(); // Arriba ya se utilizo group by, acá utilizar first para traer únicamente el primero.
 
         $detalles=DB::table('detalle_ingreso as d')
-        ->join('articulo as a', 'd.idarticulo','=','a.articulo')
-        ->select('a.nombre as articulo','d.cantidad','d.precio_compra','d.precio_venta')
-        ->where('d.idingreso','=',$id)
-        ->get();
-
-        return view("compras.ingreso.show",["ingreso"=>$ingreso,"detalles"=>$detalles]);
+            ->join('articulo as a','d.idarticulo','=','a.idarticulo')
+            ->select('a.nombre as articulo','d.cantidad','d.precio_compra','d.precio_venta')
+            ->where('d.idingreso','=',$id)
+            ->get();
+        return view("compras.ingreso.show",["ingreso"=>$ingreso,"detalles"=>$detalles], compact($ingreso));
     }
+
 
     public function destroy($id)
     {

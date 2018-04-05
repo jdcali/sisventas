@@ -70,7 +70,7 @@
 					<label for="imagen">Imagen</label>
 					<input type="file" name="imagen" class="form-control">
 					@if (($articulo->imagen)!="")
-						<img src="{{asset('imagenes/articulos/'.$articulo->imagen)}}" height="300px" width="300px">	
+						<img src="{{asset('/imagenes/articulos/'.$articulo->imagen)}}" height="300px" width="300px">	
 					@endif
 
 				</div>
